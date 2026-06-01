@@ -6,11 +6,11 @@ export default {
     name: "App",
 };
 </script>
-<style scoped>
+<style>
    body {
        font-family: Arial, Helvetica, sans-serif;
        margin: 0;
        padding: 0;
-       background: #FAF9F6;
+       background: #2F0A61;
    }
 </style>
