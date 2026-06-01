@@ -6,10 +6,37 @@
         <div class="img-wrapper">
             <img class="poke-img" alt="pokemon image" />
         </div>
+        <p class="poke-name">Pokename</p>
+        <div class="abilities-wrapper">
+            <div class="ability-background">
+                 <p>Ability</p>
+            </div>
+        </div>
     </div>
 
 </template>
 <script setup>
+import { ref, reactive, computed } from 'vue';
+
+const props = defineProps({
+    pokemon: {
+        type: Object,
+        required: true,
+    },
+});
+
+const actionClass = computed(() => {
+    switch (props.pokemon.types[0].type.name) {
+        case 'fire':     return 'type-fire';
+        case 'water':    return 'type-water';
+        case 'grass':    return 'type-grass';
+        case 'electric': return 'type-electric';
+        case 'psychic':  return 'type-psychic';
+        case 'ghost':    return 'type-ghost';
+        case 'normal':   return 'type-normal';
+        default:         return 'type-normal';
+    }
+        });
 </script>
 <style scoped>
 .card-container {
@@ -41,5 +68,18 @@
 }
 .poke-img {
 
+}
+.poke-name {
+    font-size: 20px;
+    color: #ffffff;
+    padding-left: 10px;
+}
+.abilities-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.ability-background {
+    height: 100%;
+    background-color: #FFCB05;
 }
 </style>
