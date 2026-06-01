@@ -3,10 +3,13 @@
     <h1 class="title-header">Pokemon index</h1>
     </div>
     <div class="container">
+        <PokeCard></PokeCard>
 
     </div>
 </template>
 <script setup>
+import { ref, computed, onMounted, reactive } from 'vue';
+import PokeCard from "../components/PokeCard.vue";
 </script>
 <style scoped>
 .container {
@@ -16,6 +19,8 @@
     width: 85%;
     min-height: 80dvh;
     border-radius: 14px;
+    padding-left: 30px;
+    padding-top: 30px;
 }
 .title-wrapper {
     display: flex;
