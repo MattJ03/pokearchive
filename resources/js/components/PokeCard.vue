@@ -4,7 +4,7 @@
              <p class="poke-id">001</p>
          </div>
         <div class="img-wrapper">
-            <img class="poke-img" alt="pokemon image" />
+            <img class="poke-img" alt="pokemon image" :src="props.pokemon.sprites.other['official-artwork'].front_default" />
         </div>
         <p class="poke-name">Pokename</p>
         <div class="abilities-wrapper">
@@ -32,14 +32,14 @@
             <div class="stat-row">
                 <span class="stat-label">DEF</span>
                 <div class="stat-track">
-                    <div class="stat-fill" style="width: 50%"></div>
+                    <div class="stat-fill" :style="{ width: (props.pokemon.stats[2].base_stat / 255 * 100) + '%'}"></div>
                 </div>
                 <span class="stat-value">65</span>
             </div>
             <div class="stat-row">
                 <span class="stat-label">SPD</span>
                 <div class="stat-track">
-                    <div class="stat-fill" style="width: 100%"></div>
+                    <div class="stat-fill" :style="{ width: (props.pokemon.stats[5].base_stat / 255 * 100) + '%'}"></div>
                 </div>
                 <span class="stat-value">100</span>
             </div>
